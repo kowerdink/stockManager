@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+    
+
+}
+
+body {
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(8,45,99,1) 100%); 
+    height: 100vh;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    color: antiquewhite;
+    margin: 20px;
+    padding: 10px;
+}
+
+#header h2 {
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+#header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+h3, p {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+p {
+    font-size: 12px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    padding: 35px;
+    border-radius: 10px;   
+}
+
+form input {
+    margin: 1rem;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #26354b;
+    outline: none;
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+#btnSubmit {
+    background-color: rgb(14, 86, 90);
+    font-size: 1.1rem;
+    color: white;
+    letter-spacing: 4px;
+    transition: ease 0.5s background-color;
+}
+#btnSubmit:hover {
+    background-color: rgb(7, 49, 51);
+    cursor: pointer; 
+}

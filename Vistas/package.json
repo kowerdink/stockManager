@@ -1,0 +1,11 @@
+{
+  "name": "vistas",
+  "version": "1.0.0",
+  "description": "Tests db Metodos",
+  "main": "dash.js",
+  "scripts": {
+    "json:server" : "json-server --watch db.json"
+  },
+  "author": "LAK",
+  "license": "ISC"
+}

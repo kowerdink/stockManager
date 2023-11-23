@@ -1,0 +1,329 @@
+{
+  "Productos": [
+    {
+      "Nombre": "Ryzen 5 2600",
+      "Precio": "150",
+      "Categoria": "Procesadores",
+      "Marca": "AMD",
+      "Provedor": "AMD",
+      "id": 3
+    },
+    {
+      "Nombre": "Ryzen 7 3600",
+      "Precio": "450",
+      "Categoria": "Procesadores",
+      "Marca": "AMD",
+      "Provedor": "AMD",
+      "id": 4
+    },
+    {
+      "Nombre": "Intel i7 11°",
+      "Precio": "380",
+      "Categoria": "Procesadores",
+      "Marca": "Intel",
+      "Provedor": "Intel",
+      "id": 5
+    },
+    {
+      "Nombre": "Logitech",
+      "Precio": "50",
+      "Categoria": "Notebooks",
+      "Marca": "AMD",
+      "Provedor": "Dell",
+      "id": 6
+    },
+    {
+      "Nombre": "Cagmi",
+      "Precio": "160",
+      "Categoria": "Procesadores",
+      "Marca": "Dell",
+      "Provedor": "Dell",
+      "id": 8
+    },
+    {
+      "Nombre": "Alienwere",
+      "Precio": "2500",
+      "Categoria": "Notebooks",
+      "Marca": "Dell",
+      "Provedor": "Dell",
+      "id": 11
+    },
+    {
+      "Nombre": "Razer v15",
+      "Precio": "1300",
+      "Categoria": "Notebooks",
+      "Marca": "Razer",
+      "Provedor": "Bios Sistemas",
+      "id": 89
+    },
+    {
+      "Nombre": "Legion",
+      "Precio": "500",
+      "Categoria": "Notebooks",
+      "Marca": "Asus",
+      "Provedor": "Julian",
+      "id": 90
+    },
+    {
+      "Nombre": "MotoG40",
+      "Precio": "250",
+      "Categoria": "Celulares",
+      "Marca": "Motorola",
+      "Provedor": "Carlo Aguilar",
+      "id": 92
+    },
+    {
+      "Nombre": "Iphone 14 Pro Max",
+      "Precio": "1400",
+      "Categoria": "Celulares",
+      "Marca": "Apple",
+      "Provedor": "Apple Argentina",
+      "id": 95
+    }
+  ],
+  "Categorias": [
+    {
+      "Categoria": "Notebooks",
+      "id": 1
+    },
+    {
+      "Categoria": "Procesadores",
+      "id": 2
+    },
+    {
+      "Categoria": "Celulares",
+      "id": 3
+    },
+    {
+      "Categoria": "Mouses",
+      "id": 4
+    },
+    {
+      "Categoria": "Tablets",
+      "id": 5
+    },
+    {
+      "Categoria": "PADS",
+      "id": 6
+    },
+    {
+      "Categoria": "Teclados",
+      "id": 7
+    },
+    {
+      "Categoria": "Microfonos",
+      "id": 8
+    }
+  ],
+  "Marcas": [
+    {
+      "Marca": "Logitech",
+      "id": 1
+    },
+    {
+      "Marca": "Intel",
+      "id": 2
+    },
+    {
+      "Marca": "Samsung",
+      "id": 3
+    },
+    {
+      "Marca": "Dell",
+      "id": 4
+    },
+    {
+      "Marca": "Apple",
+      "id": 5
+    },
+    {
+      "Marca": "Genius",
+      "id": 6
+    },
+    {
+      "Marca": "Daihatsu",
+      "id": 7
+    },
+    {
+      "Marca": "Panasonic",
+      "id": 8
+    },
+    {
+      "Marca": "SONY",
+      "id": 9
+    },
+    {
+      "Marca": "Xiaomi",
+      "id": 10
+    },
+    {
+      "Marca": "BGH",
+      "id": 11
+    },
+    {
+      "Marca": "Motorola",
+      "id": 12
+    },
+    {
+      "Marca": "Genius",
+      "id": 13
+    },
+    {
+      "Marca": "Sanyo 32",
+      "id": 14
+    }
+  ],
+  "Provedores": [
+    {
+      "Nombre": "Yanina fernandez",
+      "email": "yaf2023@gmail.com",
+      "Telefono": "54898789795",
+      "CUIT": "21456789129",
+      "id": 3
+    },
+    {
+      "Nombre": "Nicole Zakovich",
+      "email": "NickyZa1994@gmail.com",
+      "Telefono": "5478945621",
+      "CUIT": "20407894569",
+      "id": 4
+    },
+    {
+      "Nombre": "Sonia Perez",
+      "email": "soniaperex@gmail.com",
+      "Telefono": "54159789459",
+      "CUIT": "20457894561",
+      "id": 5
+    }
+  ],
+  "Locales": [
+    {
+      "Nombre": "Local Oeste",
+      "Direccion": "Av san martin 12345",
+      "id": 1
+    },
+    {
+      "Nombre": "Local Central",
+      "Direccion": "AV 9 de Julio 4578",
+      "id": 2
+    },
+    {
+      "Nombre": "Local Sur",
+      "Direccion": "Av Sarmiento 4567",
+      "id": 3
+    },
+    {
+      "Nombre": "Local 23",
+      "Direccion": "Av Rodriguez 894",
+      "id": 4
+    },
+    {
+      "Nombre": "Local 24",
+      "Direccion": "Av Saavedra 4500",
+      "id": 5
+    },
+    {
+      "Nombre": "Local 25",
+      "Direccion": "Av 9 de Jul,i",
+      "id": 6
+    },
+    {
+      "Nombre": "Local 26",
+      "Direccion": "AV Colon 1234",
+      "id": 7
+    }
+  ],
+  "Usuarios": [
+    {
+      "Usuario": "Roberto",
+      "Contraseña": "456789",
+      "Telefono": "55467894124",
+      "id": 1
+    },
+    {
+      "Usuario": "Leonardo",
+      "Contraseña": "123456",
+      "Telefono": "123456789",
+      "id": 2
+    },
+    {
+      "Usuario": "Jazmin",
+      "Contraseña": "789456",
+      "Telefono": "55456789147",
+      "id": 4
+    },
+    {
+      "Usuario": "Raquel",
+      "Contraseña": "123456",
+      "Telefono": "123456789",
+      "id": 5
+    }
+  ],
+  "Movimientos": [],
+  "Stock": [
+    {
+      "nombre": "Intel i7 11°",
+      "Product_ID": "5",
+      "cantidad": 4,
+      "Local": "Local Oeste",
+      "Usuario": "Roberto",
+      "id": 4
+    },
+    {
+      "nombre": "Ryzen 5 2600",
+      "Product_ID": "3",
+      "cantidad": 9,
+      "Local": "Local Oeste",
+      "Usuario": "Roberto",
+      "id": 5
+    },
+    {
+      "nombre": "Iphone 14 Pro Max",
+      "Product_ID": "95",
+      "cantidad": 3,
+      "Local": "Local Oeste",
+      "Usuario": "Roberto",
+      "id": 6
+    },
+    {
+      "nombre": "Alienwere",
+      "Product_ID": "11",
+      "cantidad": 6,
+      "Local": "Local Oeste",
+      "Usuario": "Roberto",
+      "id": 7
+    },
+    {
+      "nombre": "MotoG40",
+      "Product_ID": "92",
+      "cantidad": 3,
+      "Local": "Local Oeste",
+      "Usuario": "Roberto",
+      "id": 8
+    },
+    {
+      "nombre": "Intel i7 11°",
+      "Product_ID": "5",
+      "cantidad": 5,
+      "Local": "Local Oeste",
+      "Usuario": "Roberto",
+      "id": 9
+    },
+    {
+      "nombre": "Iphone 14 Pro Max",
+      "Product_ID": "95",
+      "cantidad": 26,
+      "Local": "Local Oeste",
+      "Usuario": "Leonardo",
+      "id": 10
+    },
+    {
+      "nombre": "Logitech",
+      "Product_ID": "6",
+      "cantidad": 8,
+      "Local": "Local Oeste",
+      "Usuario": "Leonardo",
+      "id": 11
+    }
+  ]
+}

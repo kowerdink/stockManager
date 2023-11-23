@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <link
+  href="https://fonts.googleapis.com/css?family=Rock+Salt"
+  rel="stylesheet"
+  type="text/css" />
+</head>
+<body>
+    <div class="header">
+        <div id="Logo" class="logo">
+            <span>STOCK Manager</span>
+        </div>
+        <!-- NAV Superior -->
+        <div id="nav" class="nav">
+            <button id="btnProve" class="btnNav" data-action="Provedor">Provedor</button>
+            <button id="btnMark" class="btnNav" data-action="Marca">Marca</button>
+            <button id="btnCateg" class="btnNav" data-action="Categoria">Categoria</button>
+            <button id="btnProduct" class="btnNav" data-action="Producto">Producto</button>
+            <button id="btnLocal" class="btnNav" data-action="Local">Local</button>
+            <button id="btnUser" class="btnNav" data-action="User">User</button>
+        </div>
+    </div>
+    <div id="main" class="main">
+        <!-- Sidebars  -->
+        <div id="mainSideBar" class="">
+            <div id="sidebar" class="sidebar">
+                <h4>Control</h4>
+                <ul>
+                    <li id="btnMovementsInOut">Movimientos</li>
+                    <li id="btnStock">STOCK Local</li>
+                    <li id="btnInOutStock">ENTRADA / SALIDA</li>
+                </ul>
+            </div>
+            <div id="sidebar2" class="sidebar">
+                <h4>Edicion</h4>
+                <ul>
+                    <li id="ProductosEdition">Productos</li>
+                    <li id="MarcasEdition">Marcas</li>
+                    <li id="CategoriasEdition">Categorias</li>
+                    <li id="ProveedoresEdition">Proveedores</li>
+                    <li id="LocalesEdition">Locales</li>
+                    <li id="UsersEdition">Usuarios</li>
+                </ul>
+            </div>
+            <div id="sidebar3" class="sidebar">
+                <ul>
+                    <li>Cerrar Sesion</li>
+                </ul>
+            </div>
+        </div>
+        <!-- MAIN CONTENT VIEW -->
+        <div id="mainContent" class="mainContent">
+            <div id="productTable" class="dataTable ">
+                <p class="emty-data hidden">MAIN DATA CONTENT Emty</p>
+                <table id="tableInit" class="table">
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Precio (u$s)</th>
+                      <th>Categoria</th>
+                      <th>Marca</th>
+                      <th>Provedor</th>
+                    </tr>
+                    <!-- Datos dinamicos -->
+                  </table>
+            </div>
+        </div>
+        <!-- Modificacion y Borrado de Items -->
+        <div id="ViewModifyre" class="modifyre hidden">
+            <div class="titleHeadModify">
+                <h2 id="titleModify">Title</h2>
+                <!-- Funcionalidad no aplicada-/ Futura Feature-->
+                <div class="searchtBarModify">
+                    <input type="text" name="" id="" placeholder="buscar por item">
+                </div>
+                <div class="IconModify">
+                    <div id="HomeIcon"><i class="gg-home-alt"></i></div>
+                    <!-- Funcionalidad no aplicada-/ Futura Feature
+                    <div><i class="gg-clipboard"></i></div>-->
+                </div>
+             </div>
+            <div class="subTitleModify">
+                <p>Total</p>
+                <span id="spanModify">Title</span>
+                <span id="CountModify">00</span>
+            </div>
+            <div class="mainModify">
+                <div class="filtersModify">
+                    <p>Filtros</p>
+                    <div>
+                        <a href="">Nombre</a>
+                        <a href="">Precio</a>
+                        <a href="">Marca</a>
+                        <a href="">Categoria</a>
+                        <a href="">Proveedor</a>
+                    </div>
+                </div>
+                <div class="ListModify">
+                    <div class="ListTitles">
+                        <span>Nombre</span>
+                        <span>#ID</span>
+                    </div>
+                    <div id="MainListModify" class="MainListModify">
+                        <ul id="ulModify" class="ulModify hidden">
+                            <li>
+                                <div class="ItemModify">
+                                    <div class="ItemId">
+                                        <p>Iphone 17</p>
+                                        <P>124</P>
+                                    </div>
+                                    <div class="btnsItems">
+                                        <button class="btnDeleteM">Delete</button>
+                                        <button class="btnEditM">Edit</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footerModify">
+                <p>La Edicion y el borrado de los Items seran refrejados en las Bases de Datos conrrepondientes</p>
+            </div>
+        </div>
+        <!-- Entrada / Salida -->
+        <div id="viewInOutStock" class="InOutStock hidden">
+            <div class="hearderInOut">
+                <h2>ENTRADA / SALIDA</h2>
+            </div>
+            <div class="SubTitlesInOut">
+                <div>
+                    <p>Local:</p>
+                    <select name="Local" id="LocalID">
+                        <!-- Datos dinamicos -->
+                    </select>
+                </div>
+                <div>
+                    <p>Usuario:</p>
+                    <select name="Usuario" id="UserNAME">
+                        <!-- Datos dinamicos -->
+                    </select>
+                </div>
+                <div>
+                    <button class="glowEffect2" id="IngresoBTN">Ingreso</button>
+                    <button class="" id="EgresoBTN">Egreso</button>
+                </div>
+            </div>
+            <div id="previewInOut" class="previewInOut IngresoView">
+                <div class="IconAndNotations">
+                    <div class="iconInOut">
+                        <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 391"><path fill-rule="nonzero" d="M216.22 64.01h156.74V7.78c0-4.3 3.48-7.78 7.77-7.78 2.17 0 4.12.88 5.53 2.3l123.06 106.59c3.24 2.8 3.59 7.7.79 10.93-.26.31-.55.59-.85.85L385.81 227.59c-3.24 2.8-8.14 2.44-10.94-.79a7.719 7.719 0 0 1-1.89-5.07l-.02-56.24H216.22c-4.29 0-7.77-3.48-7.77-7.77V71.78c0-4.29 3.48-7.77 7.77-7.77zm-77.18 161.52h156.74c4.29 0 7.77 3.48 7.77 7.78v85.93c0 4.29-3.48 7.77-7.77 7.77H139.04v56.24c-.02 1.8-.64 3.61-1.91 5.07a7.746 7.746 0 0 1-10.93.79L2.74 282.19c-.3-.26-.58-.54-.85-.85a7.746 7.746 0 0 1 .79-10.93l123.07-106.58a7.702 7.702 0 0 1 5.52-2.31c4.29 0 7.77 3.48 7.77 7.78v56.23z"/></svg>
+                    </div>
+                    <div class="notationsInOut">
+                        <h3>Productos</h3>
+                    </div>
+                </div>
+                <div class="mainPreviewTransactions">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>ID</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablePreviewTransactions">
+                            <!-- Dynamic DATA -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mainInOut">
+                <div class="ChoiseItemTitle">
+                    <span class="borderSpan1" data-value="" id="ChoiseSpanTitle">Producto</span>
+                    <span class="borderSpan1" data-value="" id="ChoiseSpanId">#ID</span> 
+                    </div> 
+                <div class="ChoiseItems">
+                    <div class="avaliableItems">
+                        <div id="avaliableItemsList" class="avaliableItemsList">
+                         <!--  Dynamic DATA -->
+                        </div>
+                    </div>
+                    <div class="counterItems">
+                        <div class="counterAddItemView">
+                            <span id="counterNumber">0</span>
+                        </div>
+                        <div class="counterItemsBtns">
+                            <div class="counterbtnAddQuit">
+                                <button id="restBtn">-</button>
+                                <input id="inputCounter" type="number" class="addCounterInput">
+                                <button id="plusBtn">+</button>
+                            </div>
+                            <div class="confirmAddbtnItem">
+                                <button id="confirmaddItembutton">Agregar Cantidad</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="ConfirmAddingCounterItems">
+                    <button id="SendDataStockBTN">Aceptar</button>
+                    <button id="CancelDataStockBTN">Cancelar</button>
+                </div>
+            <div class="footerInOut">
+                <p>Las cantidades seran Refrejadas en el Stock del Local</p>
+            </div>
+        </div>
+        <!-- STOCK x Punto de Venta -->
+        <div id="viewStock" class="StockSellPoint hidden">
+            <div class="headerStock">
+                <div class="stockTitle">
+                    <h2>STOCK LOCAL</h2>
+                </div>
+                <div class="SellPointChoose">
+                    <p>Punto de Venta:</p>
+                    <select name="" id="StockSelects">
+                        <!-- Dynamic DATA -->
+                    </select>
+                </div>
+            </div>
+            <div class="SubtitleStock">
+                <h4>Categorias</h4>
+            </div>
+            <div class="StockCategory">
+                <div id="StockCategory">
+                    <!--
+                    <ul>
+                       <li>Notebooks</li>
+                       <li>Teclado</li>
+                       <li>Telefonos</li>
+                       <li>CPS</li>
+                       <li>Prosesadores</li>
+                       <li>Mouses</li>
+                       <li>Pads</li>
+                       <li>Gabinetes</li>
+                    </ul> 
+                    -->
+                </div>
+                <!-- Dynamic DATA -->
+            </div>
+            <div class="MainStockList">
+                <div class="StockFilters">
+                    <h3>Filtros</h3>
+                    <div class="filtersList">
+                        <ul>
+                            <li>Nombre</li>
+                            <li>Marca</li>
+                            <li>Proveedor</li>
+                            <li>Id</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="StockList">
+                    <div id="stockList">
+                        <ul class="UlStockList">
+                            <li>
+                                <div class="NameIDStock ">
+                                    <p>#ID</p>
+                                    <p>Nombre</p>
+                                    <p>Local</p>
+                                    <p>Usuario</p>
+                                </div>
+                                <div class="PriceAmountStock">
+                                    <p>Precio</p>
+                                    <p>Cantidad</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MOVIMIENTOS entre Locales -->
+        <div style="color: rgb(255, 255, 255);" id="viewMovementsInOut" class="MovementsInOut hidden">
+            <div class="MainMovements">
+                <div class="headerMove">
+                    <div class="MovementTitle">
+                        <h2>Movimientos entre<br>Locales</h2>
+                    </div>
+                    <div class="SellPointChoose">
+                        <p>Punto de Venta:</p>
+                        <select name="" id="StockSelectsMove">
+                            <!-- Dynamic DATA -->
+                        </select>
+                    </div>
+                </div>
+                <div class="MainMoveList">
+                    <div class="StockFilters">
+                        <h3>Filtros</h3>
+                        <div class="filtersList">
+                            <ul>
+                                <li>Nombre</li>
+                                <li>Marca</li>
+                                <li>Proveedor</li>
+                                <li>Id</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="MoveList">
+                        <div id="MoveList">
+                            <ul class="UlMoveList">
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                                <li><input type="checkbox" name="" id="">
+                                    <div class="infoItemMove">
+                                        <p>#ID</p>
+                                        <p>Nombre</p>
+                                        <div>
+                                            <p>Cantidad Disponible:</p>
+                                            <P>10</P>
+                                        </div>
+                                    </div>
+                                    <div class="AmountMove">
+                                      <input type="number">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="CofirmBTNsMovements">
+                    <div class="sentoToLocal">
+                        <p>Enviar a:</p>
+                        <select name="" id="sentoToLocal">
+                            <!-- Dynamic DATA -->
+                        </select>
+                    </div>
+                    <div class="BtnSentoToLocal">
+                        <button>Confirmar Envio</button>
+                        <button>Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MOVIMIENTOS Transaccionales -->
+        <div class="MovementsBySellPoint hidden">
+        </div>
+    </div>
+    <!-- Forms Submit - Envio de Datos -->
+    <div id="forms" class="forms hidden">
+        <div class="productForm">
+            <!-- Modal 1 Producto -->
+            <div id="modalProduct" class="modal hidden">
+                <form id="FormProduct"  class="form" action="">
+                    <div class="inputone">
+                        <h3>Producto</h3>
+                        <input name="Nombre" type="text" placeholder="Nombre">
+                        <input name="Precio" type="text" placeholder="Precio">
+                        <label for="">Categoria</label>
+                        <select name="Categoria" id="Categoria">
+                            <option value=" ">Vacio</option>
+                            <option value="Generica">Generica</option>
+                            <option value="Otros">Otros</option>
+                            <!-- Datos dinamicos -->
+                        </select>
+                        <label for="">Marca</label>
+                        <select name="Marca" id="Marca">
+                            <option value=" ">Vacio</option>
+                            <option value="Generico">Generico</option>
+                            <!-- Datos dinamicos -->
+                        </select>
+                        <label for="">Provedor</label>
+                        <select name="Provedor" id="Provedor">
+                            <option value=" ">Vacio</option>
+                            <!-- Datos dinamicos -->
+                        </select>
+                        <button class="btn delete">Borrar</button>   
+                    </div>
+                    <div class="buttons buttons2">
+                        <input  type="submit" value="Agregar Producto">
+                        <button class="cancel">Cancelar</button>
+                    </div>
+                </form>
+                <div id="previewProduct" class="preview">
+                    <table id="tableProducts" class="table">
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Precio</th>
+                          <th>Categoria</th>
+                          <th>Marca</th>
+                          <th>Provedor</th>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+            <!-- Modal 2 Categoria -->
+            <div id="modalCateg" class="modal hidden">
+                <form id="FormCateg"  class="form">
+                    <div class="inputone">
+                        <h3>Ingresar una Categoria</h3>
+                        <input name="Categoria" type="text" placeholder="Nueva Categoria">
+                        <button class="btn delete">Borrar</button>
+                    </div>
+                     <div class="buttons buttons2">
+                    <input class="btnConfirm" type="submit" value="Confirmar Categoria">
+                    <button class="btnCancel">Cancelar</button>
+                    </div>
+                </form>
+                <div id="div" class="preview preview2">
+                    <h4>Categorias</h4>
+                    <ol class="CategoryList">
+                      <!-- Datos dinamicos -->
+                    </ol>
+                </div>
+                <br>
+            </div>
+            <!-- Modal 3 Marca -->
+            <div id="modalMark" class="modal hidden">
+                <form id="FormMark" class="form">
+                    <div class="inputone">
+                        <h3>Ingresar una Marca</h3>
+                        <input name="Marca" type="text" placeholder="Nueva Marca">
+                        <button class="btn delete">Borrar</button>
+                    </div>
+                    <div class="buttons buttons2">
+                        <input class="btnConfirm" type="submit" value="Confirmar Marca">
+                        <button class="btnCancel">Cancelar</button>
+                    </div>
+                </form>
+                <div class="preview preview2">
+                    <h4>Marcas</h4>
+                    <ol class="MarkList">
+                      <!-- Datos dinamicos -->
+                    </ol>
+                </div>
+                <br>
+            </div>
+            <!-- Modal 4 Provedor -->
+            <div id="modalProve" class="modal hidden">
+                <form id="FormProve" class="form">
+                    <div class="inputone">
+                        <h3>Ingresar un Provedor</h3>
+                        <input name="Nombre" type="text" placeholder="Nombre Provedor">
+                        <input name="email" type="email" placeholder="email">
+                        <input name="Telefono" type="text" placeholder="Telefono">
+                        <input name="CUIT" type="text" placeholder="CUIT">
+                        <button class="btn delete">Borrar</button>
+                    </div>
+                <div class="buttons buttons2">
+                    <input class="btnConfirm" type="submit" value="Confirmar Provedor">
+                    <button class="btnCancel">Cancelar</button>
+                </div>
+                </form>
+                <div id="previewProve" class="preview">
+                    <table id="tableProve" class="table">
+                        <tr>
+                          <th>Nombre</th>
+                          <th>E-mail</th>
+                          <th>Telefono</th>
+                          <th>CUIT</th>
+                        </tr>
+                        <!-- Datos dinamicos -->
+                      </table>
+                </div>
+                <br>
+            </div>
+            <!-- Modal 5 Local -->
+            <div id="modalLocal" class="modal hidden">
+                <form id="FormLocal" class="form">
+                    <div class="inputone">
+                        <h3>Ingresar Nuevo Local</h3>
+                        <input name="Nombre" type="text" placeholder="Nombre">
+                        <input name="Direccion" type="text" placeholder="Direccion">
+                        <button class="btn delete">Borrar</button>
+                    </div>
+                <div class="buttons buttons2">
+                    <input class="btnConfirm" type="submit" value="Confirmar Local">
+                    <button class="btnCancel">Cancelar</button>
+                </div>
+                </form>
+                <div id="previewLocales" class="preview">
+                    <table id="tableLocales" class="table">
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Direccion</th>
+                        </tr>
+                        <!-- Datos dinamicos -->
+                      </table>
+                </div>
+                <br>
+            </div>
+            <!-- Modal 6 Usuario -->
+            <div id="modalUser" class="modal hidden">
+                <form id="FormUser" class="form">
+                    <div class="inputone">
+                        <h3>Ingresar Nuevo Usuario</h3>
+                        <input name="Usuario" type="text" placeholder="Usuario">
+                        <input name="Contraseña" type="password" placeholder="Contraseña">
+                        <input name="Telefono" type="telefono" placeholder="telefono">
+                        <button class="btn delete">Borrar</button>
+                    </div>
+                <div class="buttons buttons2">
+                    <input class="btnConfirm" type="submit" value="Confirmar Usuario">
+                    <button class="btnCancel">Cancelar</button>
+                </div>
+                </form>
+                <div id="previewUsers" class="preview">
+                    <table id="tableUsers" class="table">
+                        <tr>
+                          <th>Usuario</th>
+                          <th>Contraseña</th>
+                          <th>Telefono</th>
+                        </tr>
+                        <!-- Datos dinamicos -->
+                      </table>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Edit/Update un Item -->
+    <div id="EditModal" class="Edit overflow-modal hidden">
+        <div  class="modal">
+            <form id="EditFormModal" class="form" action="">
+                <div id="EditItemsDiv" class="inputone FormEdit">
+                  <!--<h3>Producto</h3>
+                    <input name="Nombre" type="text" placeholder="Nombre">
+                    <input name="Precio" type="text" placeholder="Precio">--> 
+                </div>
+                <div class="buttons buttons2 btnAceptar">
+                    <button id="AceptEdit" type="submit">Aceptar</button>
+                    <button id="CancelEdit" class="cancel">Cancelar</button>
+                </div>
+            </form>
+            <div id="EditPreviewItem" class="preview previewEdit">
+                <h4>Datos Actuales</h4>
+                <table class="hidden">
+                    <tr>
+                        <td>Nombre</td>
+                        <td id="nombre">Max</td>
+                    </tr>
+                    <tr>
+                        <td>Precio</td>
+                        <td id="edad">450</td>
+                    </tr>
+                    <tr>
+                        <td>Categoria</td>
+                        <td id="edad">450</td>
+                    </tr>
+                    <tr>
+                        <td>Marca</td>
+                        <td id="edad">450</td>
+                    </tr>
+                    <tr>
+                        <td>Provedor</td>
+                        <td id="edad">450</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--  DIV no Usado -->
+    <!-- <div id="overlay" class="overflow-modal overlay hidden"></div> -->
+    <script src="dash.js"></script>
+</body>
+</html>
